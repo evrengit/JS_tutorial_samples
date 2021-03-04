@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>title 1</title>
+<script src="lib1.js"></script>
+</head>
+<body>
+
+    <div id="demo1div"></div>
+
+    <div id="demo2div"></div>
+
+
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo1div").innerHTML = points[0];  
+
+//arrays 
+var points = new Array(40, 100, 1, 5); // Bad
+var points = [40, 100, 1, 5, 25,];          // Good
+
+
+var cars = ["Saab", "Volvo"];
+cars[0] = "VW";
+document.getElementById("demo2div").innerHTML = cars;
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+var result1=fruits instanceof Array;   // returns true
+console.log("fruits instanceof Array :  "+result1);
+
+var points = new Array(1, 4);  // Creates an array with two elements
+var points = new Array(4);  // Creates an array with 4 undefined elements
+</script>
+
+
+</body>
+</html>
+
+
+
