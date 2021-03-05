@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>title 1</title>
+
+</head>
+<body>
+<div id="demo1div"></div>
+<div id="demo2div"></div>
+<div id="demo3div"></div>
+<div id="demo4div"></div>
+<div id="demo5div"></div>
+<div id="demo6div"></div>
+	
+<script>
+
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+
+numbers.forEach(myFunction1);
+function myFunction1(value, index, array) {
+  txt = txt + value + " - ";
+}
+document.getElementById("demo1div").innerHTML ="<h2>Array.forEach()</h2>" + txt;  
+ 
+
+//Array.map()
+
+var numbers2 = numbers.map(myFunction2);
+
+function myFunction2(value, index, array) {
+  return value * value;
+}
+
+document.getElementById("demo2div").innerHTML = "<h2>Array.map()</h2>" + numbers2;  
+
+
+//Array.filter()
+var over18 = numbers.filter(myFunction3);
+function myFunction3(value, index, array) {
+  return value > 18;
+}
+
+document.getElementById("demo3div").innerHTML = "<h2>Array.filter()</h2>" + over18;  
+
+
+//Array.reduce()
+//reduceRight() same as reduce but operation starts from right
+var sum = numbers.reduce(myFunction4);
+function myFunction4(total, value) {
+  return total + value;
+}
+document.getElementById("demo4div").innerHTML =  "<h2>Array.reduce()</h2>" +"The sum is " + sum;
+
+</script>
+
+
+</body>
+</html>
+
+
+
