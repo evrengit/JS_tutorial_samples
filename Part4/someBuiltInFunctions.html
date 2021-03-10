@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        font-size: large;
+        color: red;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .divSpecialBlue {
+        font-size: large;
+        color: darkslategray;
+        font-weight: 500;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .divText {
+        font-size: large;
+        color: darkslategray;
+        font-weight: 500;
+        font-family: "Courier New", Courier, monospace;
+      }
+      p {
+        font-size: large;
+        color: #333333;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+    <script src="samplelib1.js"></script>
+  </head>
+  <body>
+    <div id="demo0div" class="divSpecialBlue"></div>
+    <div id="demo1div"></div>
+
+    <p>
+      Math.round(4.4)=<span id="Mathround"></span> (Returns x rounded to its
+      nearest integer ) <br />Math.ceil(4.4) =<span id="Mathceil"> </span>
+      (Returns x rounded up to its nearest integer ) <br />Math.floor(4.4)=<span
+        id="Mathfloor"
+      ></span>
+      (Returns x rounded down to its nearest integer )
+      <br />Math.trunc(5.5)=<span id="Mathtrunc"></span> (Returns the integer
+      part of x ) <br />Math.sign(-3)=<span id="Mathsign"></span> (Checks
+      whether negative of positives returns[ -1,0,1]) <br />Math.random()=<span
+        id="randomIntBuiltin"
+      ></span>
+      <br />Random integer with function getRndInteger(1,5):
+      <span id="randomInt"></span>
+    </p>
+
+    <script>
+      document.getElementById("Mathround").innerHTML = Math.round(4.4);
+      document.getElementById("Mathceil").innerHTML = Math.ceil(4.4);
+      document.getElementById("Mathfloor").innerHTML = Math.floor(4.4);
+      document.getElementById("Mathtrunc").innerHTML = Math.trunc(5.5);
+      document.getElementById("Mathsign").innerHTML = Math.sign(-3);
+      document.getElementById("randomIntBuiltin").innerHTML = Math.random();
+      document.getElementById("randomInt").innerHTML = getRndInteger(1, 5);
+    </script>
+  </body>
+</html>

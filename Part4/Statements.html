@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        font-size: large;
+        color: red;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .divSpecialBlue {
+        font-size: large;
+        color: darkslategray;
+        font-weight: 500;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .divText {
+        font-size: large;
+        color: darkslategray;
+        font-weight: 500;
+        font-family: "Courier New", Courier, monospace;
+      }
+p{
+    font-size: large;
+        color:#333333;
+        font-family: "Courier New", Courier, monospace;
+
+}
+
+    </style>
+   <script src="samplelib1.js"></script>
+  </head>
+  <body>
+    <div id="demo0div" class="divSpecialBlue"></div>
+    <div id=emo1div"></div>
+
+    <hr>for in: <span id="forin"></span> 
+    <hr>forEach: <span id="forEach"></span> 
+    <hr>Looping over an Array for (let x of cars) the same can be applied for string <span id="loopoverarray"></span>
+    <hr>while (cars[i])<span id="whilesample1"></span> 
+    <hr>...<span id=".."></span> 
+
+
+
+  </p>
+
+    <script>
+     
+//The For/In Loop this sample display object keys
+var person = {fname:"Kamil", lname:"Son", age:25};
+var text = "";
+var x;
+for (x in person) {
+  text +=" "+  person[x];
+}
+document.getElementById("forin").innerHTML = text;
+
+
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
+  txt = txt + value + "---foreachSample---";
+}
+document.getElementById("forEach").innerHTML = txt;
+
+
+let cars1 = ["BMW", "Volvo", "Mini"];
+let text1 = "";
+
+for (let x1 of cars1) {
+  text1 += x1 + "----car----";
+}
+
+document.getElementById("loopoverarray").innerHTML = text1;
+
+
+//while iteration
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i = 0;
+var text = "";
+while (cars[i]) {
+  text +=" "+ cars[i] + " **whilearray**";
+  i++;
+}
+document.getElementById("whilesample1").innerHTML = text;
+ 
+    </script>
+  </body>
+</html>

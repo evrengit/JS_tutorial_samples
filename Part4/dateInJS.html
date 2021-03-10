@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <table>
+     <tbody>
+       <tr>
+        <td>ISO  Date</td>
+        <td>"2020-01-22" (The International Standard)</td>
+       </tr>
+       <tr>
+        <td>Short Date</td>
+        <td>"03/25/2015"</td>
+       </tr>
+       <tr>
+        <td>Long Date</td>
+        <td>"Mar 22 2020" or "11 Mar 2020"</td>
+       </tr>
+       <tr>
+        <td> ISO dates can be written with<br> added hours, minutes, and seconds
+        </td>
+        <td>(YYYY-MM-DDTHH:MM:SSZ)<br> var d = new Date("2013-01-15T11:00:00Z"); </td>
+       </tr>
+      </tbody> 
+ </table>
+<br>Date and time is separated with a capital T. 
+<br>UTC time is defined with a capital letter Z.
+<br>If you want to modify the time relative to UTC, remove the Z and add +HH:MM or -HH:MM instead:<br>
+<br>UTC (Universal Time Coordinated) is the same as GMT (Greenwich Mean Time). 
+<br>Omitting T or Z in a date-time string can give different results in different browsers.
+<br>When setting a date, without specifying the time zone, JavaScript will use the browser's time zone.
+
+<br><br>
+<table>
+  <tbody> 
+  <tr>
+  <td>getFullYear()</td>
+  <td>Get the <strong>year</strong> as a four digit number (yyyy)</td>
+  </tr>
+  <tr>
+  <td>getMonth()</td>
+  <td>Get the <strong>month</strong> as a number (0-11)</td>
+  </tr>
+  <tr>
+  <td>getDate()</td>
+  <td>Get the <strong>day</strong> as a number (1-31)</td>
+  </tr>
+  <tr>
+  <td>getHours()</td>
+  <td>Get the <strong>hour</strong> (0-23)</td>
+  </tr>
+  <tr>
+  <td>getMinutes()</td>
+  <td>Get the <strong>minute</strong> (0-59)</td>
+  </tr>
+  <tr>
+  <td>getSeconds()</td>
+  <td>Get the <strong>second</strong> (0-59)</td>
+  </tr>
+  <tr>
+  <td>getMilliseconds()</td>
+  <td>Get the <strong>millisecond</strong> (0-999)</td>
+  </tr>
+  <tr>
+  <td>getTime()</td>
+  <td>Get the time (milliseconds since January 1, 1970)</td>
+  </tr>
+  <tr>
+  <td>getDay()</td>
+  <td>Get the weekday as a number (0-6)</td>
+  </tr>
+  <tr>
+  <td>Date.now()</td>
+  <td>Get the time. ECMAScript 5.</td>
+  </tr>
+  </tbody></table><br><br>
+ 
+  <h6>you can also set date with set functions</h6>
+  <span><</span>script<span>></span>
+    var d = new Date();
+    d.setFullYear(2021);
+    document.getElementById("demo").innerHTML = d;
+        <span></span></span>script<span>></span>
+</body>
+</html>
+
+
+

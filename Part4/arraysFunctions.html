@@ -1,62 +1,127 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>title 1</title>
+  <head>
+    <style>
+      div {
+        font-size: large;
+        color: red;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .divSpecialBlue {
+        font-size: large;
+        color: darkslategray;
+        font-weight: 500;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+    <script src="samplelib1.js"></script>
+  </head>
+  <body>
+    <div id="demo0div" class="divSpecialBlue"></div>
+    <div id="demo1div"></div>
+    <div id="demo2div"></div>
+    <div id="demo3div"></div>
+    <div id="demo4div"></div>
+    <div id="demo5div"></div>
+    <div id="demo6div"></div>
+    <div id="demo7div"></div>
+    <div id="demo8div"></div>
+    <div id="demo9div"></div>
+    <div id="demo10div"></div>
+    <div id="demo11div"></div>
+    <div id="demo12div"></div>
+    <div id="demo13div"></div>
+    <div id="demo14div"></div>
+    <div id="demo15div"></div>
+    <div id="demo16div"></div>
+    <div id="demo17div"></div>
 
-</head>
-<body>
-<div id="demo1div"></div>
-<div id="demo2div"></div>
-<div id="demo3div"></div>
-<div id="demo4div"></div>
-<div id="demo5div"></div>
-<div id="demo6div"></div>
-	
-<script>
+    <script>
+      var txt = "";
+      var numbers = [11, 45, 4, 9, 16, 25];
+      var cars = ["bmw", "nissan", "audi", "honda", "bmw"];
+      var initialText;
+      initialText =
+        "<p>numbers_:" + numbers + "</p>" + "<p>cars____:" + cars + "</p>";
+      document.getElementById("demo0div").innerHTML = initialText;
 
-var txt = "";
-var numbers = [45, 4, 9, 16, 25];
+      //Array forEach
+      numbers.forEach(myFunction1);
+      function myFunction1(value, index, array) {
+        txt = txt + value + " - ";
+      }
 
-numbers.forEach(myFunction1);
-function myFunction1(value, index, array) {
-  txt = txt + value + " - ";
-}
-document.getElementById("demo1div").innerHTML ="<h2>Array.forEach()</h2>" + txt;  
- 
+      explainInHTML("demo1div", "Array.forEach()", txt);
 
-//Array.map()
+      //Array.map()
+      var arrayMapResult = numbers.map(myFunction2);
+      function myFunction2(value, index, array) {
+        return value * value;
+      }
+      explainInHTML("demo2div", "Array.map()", arrayMapResult);
 
-var numbers2 = numbers.map(myFunction2);
+      //Array.reduce()
+      //reduceRight() same as reduce but operation starts from right
+      var sum = numbers.reduce(myFunction4);
+      function myFunction4(total, value) {
+        return total + value;
+      }
+      explainInHTML("demo3div", "Array.reduce()", "The sum is " + sum);
 
-function myFunction2(value, index, array) {
-  return value * value;
-}
+      //Array.filter()
+      var over18 = numbers.filter(myFunction3);
+      function myFunction3(value, index, array) {
+        return value > 18;
+      }
+      explainInHTML("demo4div", "Array.filter()", over18);
 
-document.getElementById("demo2div").innerHTML = "<h2>Array.map()</h2>" + numbers2;  
+      //checks if all array values correct for criteria
+      var allOver18 = numbers.every(myFunction5);
+      explainInHTML(
+        "demo5div",
+        "Array.every()",
+        "All items over 18 is " + allOver18
+      );
 
+      function myFunction5(value, index, array) {
+        return value > 18;
+      }
 
-//Array.filter()
-var over18 = numbers.filter(myFunction3);
-function myFunction3(value, index, array) {
-  return value > 18;
-}
+      //checks if all array values correct for criteria
+      var someOver18 = numbers.some(myFunction6);
+      explainInHTML(
+        "demo6div",
+        "Array.some()",
+        "some items over 18 is " + someOver18
+      );
 
-document.getElementById("demo3div").innerHTML = "<h2>Array.filter()</h2>" + over18;  
+      function myFunction6(value, index, array) {
+        return value > 18;
+      }
 
+      //Array.indexOf() and find
+      var indexOfNissan = cars.indexOf("nissan");
+      var lastIndexOfNissan = cars.lastIndexOf("bmw");
 
-//Array.reduce()
-//reduceRight() same as reduce but operation starts from right
-var sum = numbers.reduce(myFunction4);
-function myFunction4(total, value) {
-  return total + value;
-}
-document.getElementById("demo4div").innerHTML =  "<h2>Array.reduce()</h2>" +"The sum is " + sum;
+      var firstItemOfCriteria = numbers.find(myFunction8);
 
-</script>
+      function myFunction8(value, index, array) {
+        return value > 18;
+      }
 
-
-</body>
+      explainInHTML(
+        "demo7div",
+        "Array.find()",
+        "First item of over 18 is " + firstItemOfCriteria
+      );
+      explainInHTML(
+        "demo8div",
+        "indexOf and lastIndexOf",
+        "cars.indexOf('nissan'):" +
+          indexOfNissan +
+          "<br>cars.lastIndexOf('bmw'): " +
+          lastIndexOfNissan
+      );
+    </script>
+  </body>
 </html>
-
-
-
